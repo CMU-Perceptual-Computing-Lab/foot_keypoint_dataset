@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> Human Foot Keypoint Dataset </title>
+  <link href="css/normalize.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/prism.css"/>
+
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="css/main.css" rel="stylesheet">
+    <!-- Optional theme -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+  <link href="css/myStyle.css " rel="stylesheet">
+  <link href="css/thumbnail.css" rel="stylesheet">
+
+    <style type="text/css" media="screen">
+    table td.highlighted{background-color:#87CEFA;}
+  </style>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-72129944-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+<style>
+  h2
+  {
+    text-align: left;
+  }
+     p.note
+     {
+        font-family: Arial Black;
+        font-size: 14px;
+     }
+    ul.note
+    {
+      list-style-type: none;
+      padding-left: 0px;
+    }
+
+    li.note {
+
+      font-family: Verdana;
+      position: relative;
+      padding-left: 7px;
+      font-size: 13px;
+    }
+
+    li.note:before {
+        content: "\e080";
+        font-family: 'Glyphicons Halflings';
+        font-size: 9px;
+        position: relative;
+        margin-right: 3px;
+        top: 3px;
+        color: #ccc;
+      }
+</style>
+
+</head>
+
+
+  <body>
+    <div class="container">
+
+  <h1> <center> Human Foot Keypoint Dataset</center> </h1>
+
+  <p align = "center"><font size = "4"> <a href="https://people.eecs.berkeley.edu/~zhecao/">Zhe Cao</a>, <a href="https://www.gineshidalgo.com/">Gines Hidalgo</a>, <a href="http://www.cs.cmu.edu/~tsimon/">Tomas Simon</a>, <a href="https://scholar.google.com/citations?user=sFQD3k4AAAAJ&hl=en">Shih-En Wei</a>, <a href="http://www.cs.cmu.edu/~yaser/">Yaser Sheikh</a></font></p>
+  <p align = "center"><font size = "4"> Carnegie Mellon University </font></p>
+
+
+  <div id="teaser">
+      <img src="fig_feet.png"  width="100%" alt="Foot examples">
+  </div>
+
+
+<h2>Description</h2>
+<p>
+    Existing human pose datasets contain limited body part types. For both MPII and MS-COCO datasets, foot annotations are limited to ankle position only. However, graphics applications such as avatar retargeting or 3D human shape reconstruction require foot keypoints such as big toe and heel.
+    Without foot keypoint information, these approaches suffer from problems such as the candy wrapper effect, floor penetration, and foot skate.
+    To address these issues, a subset of about 15K human foot instances has been labeled using the Clickworker platform.
+    The dataset is obtained out of the over 100K person annotation instances available in the COCO dataset. It is split up with 14K annotations from the COCO training set and 545 from the validation set.
+    A total of 6 foot keypoints have been labeled, consisting of the big toe, small toe, and heel for each foot
+    (see the figure below). We consider the 3D coordinate of the foot keypoints rather than the surface position. For instance, for the exact toe positions, we label the area between the connection of the nail and skin, and also take depth into consideration by labeling the center of the toe rather than the surface.
+</p>
+
+The foot keypoint <b>ordering</b> in the annotation file is as follows:
+<br>
+<table border="0">
+<tr>
+    <td align="center"><img src="foot_keypoints.png" alt="photo" width="110" vspace="5" hspace="25" /></td>
+    <td>
+      <ol type="1" start="0">
+        <br>
+        <li>Left big toe.</li>
+        <li>Left small toe.</li>
+        <li>Left heel.</li>
+        <li>Right big toe.</li>
+        <li>Right small toe.</li>
+        <li>Right heel.</li>
+      </ol>
+    </td>
+</tr>
+</table>
+
+<!-- <center>
+  <img src="foot_keypoints.png"  width="150" alt="Foot examples">
+</center> -->
+
+
+
+<h2>Download</h2>
+  <div id="stats-table">
+      <table class="table table-striped" align="left">
+        <tr>
+          <td>
+            <h5><b>Foot Keypoint Annotations (Training: ~13.5k annotations, Validation: ~0.5k annotations)</b></h5>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <!-- <a href="http://domedb.perception.cs.cmu.edu/panopticDB/hands/hand_labels.zip">Download (588MB)</a> -->
+            Download the <a href="http://posefs1.perception.cs.cmu.edu/OpenPose/datasets/foot/person_keypoints_train2017_foot_v1.zip"><b>train2017_foot_v1.zip</b></a> JSON zip file.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Download the <a href="http://posefs1.perception.cs.cmu.edu/OpenPose/datasets/foot/person_keypoints_val2017_foot_v1.zip"><b>val2017_foot_v1.zip</b></a> JSON zip file.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Download the image dataset from the <a href="http://cocodataset.org/#download" target="_blank"><b>MS-COCO website</b></a> (in particular <a href="http://images.cocodataset.org/zips/train2017.zip"><b>2017 Train images [118K/18GB]</b></a> and <a href="http://images.cocodataset.org/zips/val2017.zip"><b>2017 Val images [5K/1GB]</b></a>)
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Trained foot detector models and testing code released in <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank"><b>OpenPose</b></a>
+            </td>
+        </tr>
+
+      </table>
+  </div>
+  <p>
+    The JSON files follow standard COCO format, analogously to <a href="http://images.cocodataset.org/annotations/annotations_trainval2017.zip"><b>2017 Train/Val annotations [241MB]</b></a> from the <a href="http://cocodataset.org/#download" target="_blank"><b>MS-COCO website</b></a>.
+  </p>
+
+
+
+<h2>Results</h2>
+<center>
+ <a href="https://youtu.be/Cu7g2Ldm-WM" target="_blank"> <img src="results_flashmob.gif"
+    width="640"
+    alt="Foot examples">
+  <!-- Full video here: <b>here</b> -->
+</a>.
+<!-- width="560" height="315" (youtube recommneded)-->
+<!-- allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" -->
+<!-- width="1024" height="576" -->
+<!-- <iframe
+width="960" height="540"
+src="https://www.youtube.com/embed/XPBw1IvixWg" frameborder="0"
+allowfullscreen></iframe> -->
+<!-- <iframe width="1024" height="450" src="https://www.youtube.com/embed/Lajt6vS_dSM" frameborder="0" allowfullscreen></iframe> -->
+<!--         <tr>
+          <td>
+            <img src="fig_feet.png"
+              width="1024"
+              alt="Foot examples">
+              height="200"
+          </td>
+        </tr> -->
+</center>
+
+
+<h2>Citation</h2>
+<h5>Please cite the following paper (<a href="http://arxiv.org/abs/1704.07809">arXiv link</a>) in your publications if the dataset helps your research.</h5>
+
+ @inproceedings{cao2018openpose,
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;author = {Zhe Cao and Gines Hidalgo and Tomas Simon and Shih-En Wei and Yaser Sheikh},
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;booktitle = {Arxiv},
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;title = {Open{P}ose: realtime multi-person 2{D} pose estimation using {P}art {A}ffinity {F}ields},
+   <!-- &nbsp;&nbsp;&nbsp;&nbsp;title = {Open{P}ose: Realtime {M}ulti-{P}erson 2{D} {P}ose {E}stimation using {P}art {A}ffinity {F}ields},  -->
+   <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;year = {2018}
+   <br>
+ }
+ <br>
+
+
+
+<h2>License</h2>
+<p>The dataset follows <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/LICENSE"> OpenPose license</a>, it is freely available for non-commercial use. Please, see the license for further details. For commercial queries, use the Directly Contact Organization section from the <a href="https://flintbox.com/public/project/47343/">FlintBox link</a> and also send a copy of that message to <a href="http://www.cs.cmu.edu/~yaser/">Yaser Sheikh</a>.</p>
+
+
+
+</div> <!-- /container -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/videopreview.js"></script>
+  </body>
+</html>
